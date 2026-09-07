@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.1.1] - 2026-08-14
+
+### Changed
+
+- CICD: skip the sourcemap when diffing dist. Streaming its diff to the job log dominated
+  the Validate dist step, pushing the build job to nearly ten minutes on a stale-bundle failure.
+- Build: rebuild dist for undici 6.28.0. Dependabot only updates package-lock.json,
+  but undici is a runtime dependency that rollup inlines into the committed bundle.
+- Editorial: Use Dash0 endpoints in README examples.
+
 ## [4.1.0] - 2026-07-27
 
 ### Added
@@ -242,7 +252,8 @@ permissions:
 - Support for `https` endpoints (proto over http).
 - Update to node 20.x
 
-[unreleased]: https://github.com/dash0hq/otel-cicd-action/compare/v4.1.0...HEAD
+[unreleased]: https://github.com/dash0hq/otel-cicd-action/compare/v4.1.1...HEAD
+[4.1.1]: https://github.com/dash0hq/otel-cicd-action/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/dash0hq/otel-cicd-action/compare/v4.0.1...v4.1.0
 [4.0.1]: https://github.com/dash0hq/otel-cicd-action/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/dash0hq/otel-cicd-action/compare/v3.0.0...v4.0.0
